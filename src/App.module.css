@@ -1,0 +1,29 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  width: 480px;
+}
+
+.dateHeader {
+  width: 100%;
+  padding: 12px 24px;
+}
+
+.taskContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.taskButton {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
