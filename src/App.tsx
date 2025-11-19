@@ -1,4 +1,4 @@
-import styles from './App.module.css'
+import styles from "./App.module.css";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
