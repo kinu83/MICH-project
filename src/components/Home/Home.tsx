@@ -1,6 +1,6 @@
-import styles from "./App.module.css";
+import styles from "./Home.module.css";
 
-function App() {
+export function Home() {
   return (
     <div className={styles.app}>
       <div className={styles.container}>
@@ -19,5 +19,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
