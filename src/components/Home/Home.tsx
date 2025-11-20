@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import styles from "./Home.module.css";
 
 export function Home() {
@@ -8,12 +9,12 @@ export function Home() {
           <span>20--年--月--日</span>
         </div>
         <div className={styles.taskContainer}>
-          <button className={styles.taskButton}>
+          <Link to="/tasks/create" className={styles.taskLinkButton}>
             <span>今日のタスクを入力する</span>
-          </button>
-          <button className={styles.taskButton}>
+          </Link>
+          <Link to="/tasks" className={styles.taskLinkButton}>
             <span>タスクを確認する</span>
-          </button>
+          </Link>
         </div>
       </div>
     </div>
