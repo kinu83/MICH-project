@@ -3,7 +3,7 @@
 ## 開発環境構築
 
 ### 1. Node.js の確認
-Node.js がインストールされていることを確認してください。（v20系以上の LTS または最新版を推奨）
+Node.js がインストールされていることを確認してください。（.node-versionや.nvmrcに指定されているバージョンを推奨）
 
 ```bash
 node -v
@@ -13,7 +13,6 @@ Corepack を有効化し、プロジェクトで指定されたバージョン�
 
 ```bash
 corepack enable
-corepack prepare pnpm@10.22.0 --activate
 ```
 
 ### 3. 依存関係のインストール
