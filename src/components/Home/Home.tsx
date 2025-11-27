@@ -2,13 +2,14 @@ import { Link } from "@tanstack/react-router";
 import styles from "./Home.module.css";
 
 export function Home() {
+  const date = new Date();
   return (
     <div className={styles.app}>
       <div className={styles.container}>
         <div className={styles.dateHeader}>
-          {new Date().getFullYear()}年
-          {String(new Date().getMonth() + 1).padStart(2, "0")}月
-          {String(new Date().getDate()).padStart(2, "0")}日
+          {date.getFullYear()}年
+          {String(date.getMonth() + 1).padStart(2, "0")}月
+          {String(date.getDate()).padStart(2, "0")}日
         </div>
         <div className={styles.taskContainer}>
           <Link to="/tasks/create" className={styles.taskLinkButton}>
