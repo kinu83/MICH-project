@@ -4,7 +4,6 @@
   font-size: 16pt;
   display: grid;
   place-content: center;
-  background-color: #EA8E84;
 }
 
 .container {
@@ -12,16 +11,6 @@
 }
 
 .dateHeader {
-  width: 600px;
-  margin: 0 auto;
-  padding: 12px 24px;
-  border-radius: 20px;
-  display: grid;
-  place-items: center;
-  color: #FFFFFF;
-  border: 1px solid #4B4B4B;
-  background-color: #CE556C;
-
   position: relative;
   top: 20px;
   z-index: 10;
