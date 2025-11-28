@@ -58,6 +58,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* global styles */
+* {
+  /* color variables */
+  --pink-main: #EA8E84;
+  --red-main: #CE556C;
+  --white-main: #FFFFFF;
+  --gray-light-main: #F5F4F1;
+  --black-main: #4B4B4B;
+}
+
 body {
-  background-color: #EA8E84;
+  background-color: var(--pink-main);
 }

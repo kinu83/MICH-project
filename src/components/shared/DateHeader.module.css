@@ -5,7 +5,7 @@
   border-radius: 20px;
   display: grid;
   place-items: center;
-  color: #FFFFFF;
-  border: 1px solid #4B4B4B;
-  background-color: #CE556C;
+  color: var(--white-main);
+  border: 1px solid var(--black-main);
+  background-color: var(--red-main);
 }
