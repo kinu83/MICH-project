@@ -46,6 +46,7 @@ export const TaskList = () => {
                 <ChevronRight />
               </span>
             </button>
+            <div className={styles.taskListInnerBackLayer} />
           </div>
         </div>
       </div>
