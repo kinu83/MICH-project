@@ -50,7 +50,6 @@
   aspect-ratio: 1 / 1;
   background-color: transparent;
   border: none;
-  cursor: pointer;
 }
 
 .taskListInputTitle {
@@ -58,7 +57,7 @@
   font-weight: bold;
 }
 
-.taskListAddTaskButton {
+.taskListAddButton {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -68,10 +67,9 @@
   border-radius: 20px;
   background-color: var(--pink-main);
   color: var(--white-main);
-  cursor: pointer;
 }
 
-.taskListAddTaskButtonIcon {
+.taskListAddButtonIcon {
   width: 20px;
   aspect-ratio: 1 / 1;
   fill: var(--white-main);
@@ -90,7 +88,6 @@
   padding: 6px 20px;
   border-radius: 8px;
   font-size: 14pt;
-  cursor: pointer;
 }
 
 .taskListNavigationButtonPrev {

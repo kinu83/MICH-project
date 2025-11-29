@@ -5,6 +5,7 @@ import { Plus } from "../../shared/icons/Plus";
 import { XMark } from "../../shared/icons/XMark";
 import styles from "./TaskList.module.css";
 
+// mock data
 const EXAMPLE_TASKS = [
   { id: 1, title: "タスク1" },
   { id: 2, title: "タスク2" },
@@ -16,20 +17,19 @@ export const TaskList = () => {
   return (
     <div className={styles.taskList}>
       <div className={styles.taskListContainer}>
-        <div>
-          <DateHeader />
-        </div>
+        <DateHeader />
         <div className={styles.taskListInner}>
           <span className={styles.taskListInputTitle}>今日のタスクは？</span>
           <TaskListItems />
-          <button className={styles.taskListAddTaskButton}>
-            <span className={styles.taskListAddTaskButtonIcon}>
+          <button className={styles.taskListAddButton}>
+            <span className={styles.taskListAddButtonIcon}>
               <Plus />
             </span>
             タスクを追加
           </button>
           <div className={styles.taskListNavigationButtonGroup}>
             <button
+              type="button"
               className={`${styles.taskListNavigationButton} ${styles.taskListNavigationButtonPrev}`}
             >
               <span className={styles.taskListNavigationButtonIcon}>
@@ -38,6 +38,7 @@ export const TaskList = () => {
               戻る
             </button>
             <button
+              type="button"
               className={`${styles.taskListNavigationButton} ${styles.taskListNavigationButtonNext}`}
             >
               次へ

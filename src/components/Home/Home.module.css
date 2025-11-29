@@ -40,7 +40,6 @@
   color: var(--white-main);
   border: 1px solid var(--black-main);
   background-color: var(--pink-main);
-  cursor: pointer;
 }
 
 .taskLinkButtonSecondary {
