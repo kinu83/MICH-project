@@ -1,0 +1,113 @@
+.taskList {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 16pt;
+  display: grid;
+  place-content: center;
+}
+
+.taskListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 720px;
+}
+
+.taskListInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 24px;
+  border: 1px solid var(--black-main);
+  background-color: var(--gray-light-main);
+}
+
+.taskListItems {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 64%;
+  min-height: 180px;
+}
+
+.taskListItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+}
+
+.taskListItemInner {
+  flex-grow: 1;
+  list-style: none;
+  border-bottom: 1px solid var(--black-main);
+  padding: 0 12px;
+}
+
+.taskItemDeleteButton {
+  width: 32px;
+  aspect-ratio: 1 / 1;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.taskListInputTitle {
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+.taskListAddTaskButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14pt;
+  padding: 6px 24px;
+  border: 1px solid var(--red-main);
+  border-radius: 20px;
+  background-color: var(--pink-main);
+  color: var(--white-main);
+  cursor: pointer;
+}
+
+.taskListAddTaskButtonIcon {
+  width: 20px;
+  aspect-ratio: 1 / 1;
+  fill: var(--white-main);
+}
+
+.taskListNavigationButtonGroup {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.taskListNavigationButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 20px;
+  border-radius: 8px;
+  font-size: 14pt;
+  cursor: pointer;
+}
+
+.taskListNavigationButtonPrev {
+  background-color: var(--white-main);
+  color: var(--pink-main);
+  border: 1px solid var(--black-main);
+  fill: var(--pink-main);
+}
+
+.taskListNavigationButtonNext {
+  background-color: var(--pink-main);
+  color: var(--white-main);
+  border: 1px solid var(--red-main);
+  fill: var(--white-main);
+}
+
+.taskListNavigationButtonIcon {
+  width: 20px;
+  aspect-ratio: 1 / 1;  
+}
