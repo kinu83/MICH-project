@@ -56,3 +56,21 @@ h1, h2, h3, h4, h5, h6 {
 #root, #__next {
   isolation: isolate;
 }
+
+/* global styles */
+* {
+  /* color variables */
+  --pink-main: #EA8E84;
+  --red-main: #CE556C;
+  --white-main: #FFFFFF;
+  --gray-light-main: #F5F4F1;
+  --black-main: #4B4B4B;
+}
+
+body {
+  background-color: var(--pink-main);
+}
+
+button {
+  cursor: pointer;
+}

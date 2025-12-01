@@ -4,7 +4,6 @@
   font-size: 16pt;
   display: grid;
   place-content: center;
-  background-color: #EA8E84;
 }
 
 .container {
@@ -12,16 +11,6 @@
 }
 
 .dateHeader {
-  width: 600px;
-  margin: 0 auto;
-  padding: 12px 24px;
-  border-radius: 20px;
-  display: grid;
-  place-items: center;
-  color: #FFFFFF;
-  border: 1px solid #4B4B4B;
-  background-color: #CE556C;
-
   position: relative;
   top: 20px;
   z-index: 10;
@@ -32,8 +21,8 @@
   gap: 24px;
   padding: 0 24px;
   width: 100%;
-  border: 1px solid #4B4B4B;
-  background-color: #F5F4F1;
+  border: 1px solid var(--black-main);
+  background-color: var(--gray-light-main);
 }
 
 
@@ -48,13 +37,12 @@
   margin: 96px 48px 48px;
   padding: 48px;
   border-radius: 50%;
-  color: #FFFFFF;
-  border: 1px solid #4B4B4B;
-  background-color: #EA8E84;
-  cursor: pointer;
+  color: var(--white-main);
+  border: 1px solid var(--black-main);
+  background-color: var(--pink-main);
 }
 
 .taskLinkButtonSecondary {
-  color: #EA8E84;
-  background-color: #FFFFFF;
+  color: var(--pink-main);
+  background-color: var(--white-main);
 }

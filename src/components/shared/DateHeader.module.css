@@ -1,0 +1,11 @@
+.dateHeader {
+  width: 600px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  color: var(--white-main);
+  border: 1px solid var(--black-main);
+  background-color: var(--red-main);
+}
