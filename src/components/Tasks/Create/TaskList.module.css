@@ -87,6 +87,60 @@
   fill: var(--white-main);
 }
 
+.taskListDetailTaskPlate {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  text-align: center;
+  width: 400px;
+  border-color: gray;
+  border: 2px solid #c0c0c0;
+}
+
+.taskListDetailTaskName {
+  flex: 1;
+  color: black;
+  font-weight: bold;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}
+
+.taskNationButton {
+  flex-shrink: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 15px 12px;
+}
+
+.prevBtn {
+  border-right-color:#f5f5f5;
+  margin-left: 5px;
+  border-left-width: 0;
+}
+
+.prevBtn:hover {
+  border-right-color:#d3d3d3; 
+}
+
+.nextBtn {
+  border-left-color:#f5f5f5;
+  border-right-width: 0;
+  margin-right: 5px;
+}
+
+.nextBtn:hover {
+  border-left-color:#d3d3d3;
+}
+
 .taskListNavigationButtonGroup {
   display: flex;
   justify-content: space-between;
@@ -119,4 +173,8 @@
 .taskListNavigationButtonIcon {
   width: 20px;
   aspect-ratio: 1 / 1;  
+}
+
+.taskListDetailInput {
+  resize: none;
 }
