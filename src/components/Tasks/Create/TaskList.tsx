@@ -8,10 +8,26 @@ import { useState } from "react";
 
 // mock data
 const EXAMPLE_TASKS = [
-  { id: 1, title: "タスク1", detail: "これはタスク1これはタスク1これはタスク1これはタスク1これはタスク1" },
-  { id: 2, title: "タスク2", detail: "これはタスク2これはタスク2これはタスク2これはタスク2これはタスク2" },
-  { id: 3, title: "タスク3", detail: "これはタスク3これはタスク3これはタスク3これはタスク3これはタスク3" },
-  { id: 4, title: "タスク4", detail: "これはタスク4これはタスク4これはタスク4これはタスク4これはタスク4" },
+  {
+    id: 1,
+    title: "タスク1",
+    detail: "これはタスク1これはタスク1これはタスク1これはタスク1これはタスク1",
+  },
+  {
+    id: 2,
+    title: "タスク2",
+    detail: "これはタスク2これはタスク2これはタスク2これはタスク2これはタスク2",
+  },
+  {
+    id: 3,
+    title: "タスク3",
+    detail: "これはタスク3これはタスク3これはタスク3これはタスク3これはタスク3",
+  },
+  {
+    id: 4,
+    title: "タスク4",
+    detail: "これはタスク4これはタスク4これはタスク4これはタスク4これはタスク4",
+  },
 ];
 
 export const PageStep = {
@@ -20,7 +36,7 @@ export const PageStep = {
 } as const;
 
 export const TaskList = () => {
-  const [currentPage, setCurrentPage] = useState <number>(PageStep.AllTasks);
+  const [currentPage, setCurrentPage] = useState<number>(PageStep.AllTasks);
 
   function handleClickNextButton() {
     if (currentPage === PageStep.TaskDetail) return;
@@ -37,8 +53,8 @@ export const TaskList = () => {
       <div className={styles.taskListContainer}>
         <DateHeader />
         <div className={styles.taskListInner}>
-          {currentPage === 1 && <TaskListItems />}
-          {currentPage === 2 && <TaskListDetails />}
+          {currentPage === PageStep.AllTasks && <TaskListItems />}
+          {currentPage === PageStep.TaskDetail && <TaskListDetails />}
           <div className={styles.taskListNavigationButtonGroup}>
             <button
               type="button"
@@ -50,13 +66,15 @@ export const TaskList = () => {
               </span>
               戻る
             </button>
-            {currentPage === 2 && (<button
-              type="button"
-              className={`${styles.taskListNavigationButton} ${styles.taskListNavigationButtonPrev}`}
-              onClick={handleClickNextButton}
-            >
-              スキップ
-            </button>)}
+            {currentPage === 2 && (
+              <button
+                type="button"
+                className={`${styles.taskListNavigationButton} ${styles.taskListNavigationButtonPrev}`}
+                onClick={handleClickNextButton}
+              >
+                スキップ
+              </button>
+            )}
             <button
               type="button"
               className={`${styles.taskListNavigationButton} ${styles.taskListNavigationButtonNext}`}
@@ -102,14 +120,14 @@ const TaskListItems = () => {
 };
 
 const TaskListDetails = () => {
-  const [ taskPosition, setTaskPosition ] = useState(1);
+  const [taskPosition, setTaskPosition] = useState(1);
 
-  function handleClickNextTask (){
+  function handleClickNextTask() {
     if (taskPosition === EXAMPLE_TASKS.length) return;
     setTaskPosition((prev) => prev + 1);
   }
 
-  function handleClickPrevTask (){
+  function handleClickPrevTask() {
     if (taskPosition === 1) return;
     setTaskPosition((prev) => prev - 1);
   }
@@ -118,25 +136,26 @@ const TaskListDetails = () => {
     <>
       <span className={styles.taskListInputTitle}>タスクの詳細は？</span>
       <div className={styles.taskListDetailTaskPlate}>
-        {
-          taskPosition !== 1 &&
-          <button 
+        {taskPosition !== 1 && (
+          <button
             className={`${styles.taskNationButton} ${styles.prevBtn}`}
             onClick={handleClickPrevTask}
           />
-        }
-        <div className={styles.taskListDetailTaskName}>{EXAMPLE_TASKS.find(t => t.id === taskPosition)?.title}</div>
-        {
-          taskPosition !== EXAMPLE_TASKS.length &&
+        )}
+        <div className={styles.taskListDetailTaskName}>
+          {EXAMPLE_TASKS.find((t) => t.id === taskPosition)?.title}
+        </div>
+        {taskPosition !== EXAMPLE_TASKS.length && (
           <button
             className={`${styles.taskNationButton} ${styles.nextBtn}`}
             onClick={handleClickNextTask}
           />
-        }
+        )}
       </div>
       <div>
         <textarea
-          value={EXAMPLE_TASKS.find(t => t.id === taskPosition)?.detail}
+          className={styles.taskListDetailInput}
+          value={EXAMPLE_TASKS.find((t) => t.id === taskPosition)?.detail}
           placeholder="ここに詳細を入力してください..."
           rows={7}
           cols={40}
@@ -144,4 +163,4 @@ const TaskListDetails = () => {
       </div>
     </>
   );
-}
+};
