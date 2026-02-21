@@ -105,7 +105,7 @@
   text-align: center;
   padding: 10px 0;
   white-space: nowrap;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
 }
 
 .taskNationButton {
@@ -122,23 +122,23 @@
 }
 
 .prevBtn {
-  border-right-color:#f5f5f5;
+  border-right-color: #f5f5f5;
   margin-left: 5px;
   border-left-width: 0;
 }
 
 .prevBtn:hover {
-  border-right-color:#d3d3d3; 
+  border-right-color: #d3d3d3;
 }
 
 .nextBtn {
-  border-left-color:#f5f5f5;
+  border-left-color: #f5f5f5;
   border-right-width: 0;
   margin-right: 5px;
 }
 
 .nextBtn:hover {
-  border-left-color:#d3d3d3;
+  border-left-color: #d3d3d3;
 }
 
 .taskListNavigationButtonGroup {
@@ -172,9 +172,37 @@
 
 .taskListNavigationButtonIcon {
   width: 20px;
-  aspect-ratio: 1 / 1;  
+  aspect-ratio: 1 / 1;
 }
 
 .taskListDetailInput {
   resize: none;
+}
+
+
+.taskTime {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+}
+
+.taskTimeRight {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.taskTimeSelect {
+  width: 44px;
+  height: 34px;
+  border: 1px solid #555;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.taskTimeUnit {
+  font-size: 18px;
+  line-height: 1;
 }

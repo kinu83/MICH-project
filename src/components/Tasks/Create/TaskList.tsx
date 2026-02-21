@@ -33,13 +33,14 @@ const EXAMPLE_TASKS = [
 export const PageStep = {
   AllTasks: 1,
   TaskDetail: 2,
+  TaskTime: 3,
 } as const;
 
 export const TaskList = () => {
   const [currentPage, setCurrentPage] = useState<number>(PageStep.AllTasks);
 
   function handleClickNextButton() {
-    if (currentPage === PageStep.TaskDetail) return;
+    if (currentPage === PageStep.TaskTime) return;
     setCurrentPage((prev) => prev + 1);
   }
 
@@ -55,6 +56,7 @@ export const TaskList = () => {
         <div className={styles.taskListInner}>
           {currentPage === PageStep.AllTasks && <TaskListItems />}
           {currentPage === PageStep.TaskDetail && <TaskListDetails />}
+          {currentPage === PageStep.TaskTime && <TaskTime />}
           <div className={styles.taskListNavigationButtonGroup}>
             <button
               type="button"
@@ -161,6 +163,73 @@ const TaskListDetails = () => {
           cols={40}
         />
       </div>
+    </>
+  );
+};
+
+type TimeValue = { h: number; m: number };
+
+const HOURS = Array.from({ length: 24 }, (_, i) => i);
+const MINUTES = Array.from({ length: 12 }, (_, i) => i * 5);
+
+const TaskTime = () => {
+  const [taskTimes, setTaskTimes] = useState<Record<number, TimeValue>>(
+    Object.fromEntries(
+      EXAMPLE_TASKS.map((t) => [t.id, { h: 0, m: 0 }])
+    )
+  );
+
+  const updateTime = (taskId: number, key: "h" | "m", value: number) => {
+    setTaskTimes((prev) => ({
+      ...prev,
+      [taskId]: { ...prev[taskId], [key]: value },
+    }));
+  };
+
+  return (
+    <>
+      <span className={styles.taskListInputTitle}>タスクの予想時間は？</span>
+      <ul className={styles.taskListItems}>
+        {EXAMPLE_TASKS.map((task) => {
+          const time = taskTimes[task.id];
+
+          return (
+            <li key={task.id} className={styles.taskListItem}>
+              <div className={styles.taskListItemInner}>
+                {task.title}
+              </div>
+
+              <div className={styles.taskTimeRight}>
+                <select
+                  className={styles.taskTimeSelect}
+                  value={time.h}
+                  onChange={(e) =>
+                    updateTime(task.id, "h", Number(e.target.value))
+                  }
+                >
+                  {HOURS.map((h) => (
+                    <option key={h} value={h}>{h}</option>
+                  ))}
+                </select>
+                <span className={styles.taskTimeUnit}>h</span>
+
+                <select
+                  className={styles.taskTimeSelect}
+                  value={time.m}
+                  onChange={(e) =>
+                    updateTime(task.id, "m", Number(e.target.value))
+                  }
+                >
+                  {MINUTES.map((m) => (
+                    <option key={m} value={m}>{m}</option>
+                  ))}
+                </select>
+                <span className={styles.taskTimeUnit}>m</span>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 };
