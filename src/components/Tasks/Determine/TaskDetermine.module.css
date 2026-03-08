@@ -1,0 +1,177 @@
+.taskDetermine {
+    width: 100%;
+    min-height: 100vh;
+    font-size: 16pt;
+    display: grid;
+    place-content: center;
+}
+
+.taskDetermineContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    min-width: 720px;
+}
+
+.taskDeterminePanel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border: 1px solid var(--black-main);
+    background-color: var(--gray-light-main);
+    min-height: 520px;
+}
+
+.taskDetermineContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.taskDetermineBackLayer {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--black-main);
+    background-color: var(--gray-light-main);
+    z-index: -1;
+}
+
+.comment {
+    font-size: 20pt;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.taskDetermineItems {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 64%;
+}
+
+.taskDetermineItem {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.taskDetermineItemRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.taskDetermineTaskName {
+    font-size: 16pt;
+    color: var(--black-main);
+}
+
+.taskDetermineTimeGroup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.taskDetermineOriginalTime {
+    font-size: 18pt;
+    color: var(--black-main);
+    min-width: 88px;
+    text-align: right;
+}
+
+.taskDetermineArrow {
+    font-size: 16pt;
+    color: var(--pink-main);
+    line-height: 1;
+}
+
+.taskDetermineSuggestedTime {
+    font-size: 18pt;
+    color: var(--pink-main);
+    min-width: 88px;
+    text-align: left;
+}
+
+.taskDetermineItemBorder {
+    border-bottom: 1px solid var(--black-main);
+    width: 100%;
+}
+
+.summaryBox {
+    width: 400px;
+    border: 1px solid var(--black-main);
+    background-color: var(--pink-sub, #e58f83);
+    padding: 18px 24px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+.summaryRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.summaryLabel {
+    font-size: 18pt;
+    color: var(--white-main);
+    font-weight: bold;
+}
+
+.summaryValue {
+    font-size: 18pt;
+    color: var(--white-main);
+}
+
+.taskDetermineNavigationButtonGroup {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+}
+
+.taskDetermineNavigationButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 20px;
+    border-radius: 8px;
+    font-size: 14pt;
+}
+
+.taskDetermineNavigationButtonPrev {
+    background-color: var(--white-main);
+    color: var(--pink-main);
+    border: 1px solid var(--black-main);
+    fill: var(--pink-main);
+}
+
+.taskDetermineNavigationButtonMiddle {
+    background-color: var(--white-main);
+    color: var(--pink-main);
+    border: 1px solid var(--black-main);
+    justify-content: center;
+    text-align: center;
+}
+
+.taskDetermineNavigationButtonNext {
+    background-color: var(--pink-main);
+    color: var(--white-main);
+    border: 1px solid var(--red-main);
+    fill: var(--white-main);
+}
+
+.taskDetermineNavigationButtonIcon {
+    width: 20px;
+    aspect-ratio: 1 / 1;
+}
