@@ -1,7 +1,7 @@
 import { mock } from "./mock";
-import type { Task } from "./types";
+import type { AppStorage, Task } from "./types";
 
-export const initStorage = (): typeof mock => {
+export const initStorage = (): AppStorage => {
   const raw = localStorage.getItem("app-storage");
   if (!raw) {
     localStorage.setItem("app-storage", JSON.stringify(mock));
