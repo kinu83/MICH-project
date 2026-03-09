@@ -19,11 +19,11 @@ const mockTasks: Task[] = [
 
 const totalMinutes = 180;
 
-function formatMinutesToHourText(minutes: number) {
-    const safeMinutes = Math.max(0, Math.round(minutes));
+function formatMinutesToHourText(totalminutes: number) {
+    const safeMinutes = Math.max(0, Math.round(totalminutes));
     const hours = Math.floor(safeMinutes / 60);
-    const minites = safeMinutes % 60;
-    return `${hours}h${minites}m`;
+    const minutes = safeMinutes % 60;
+    return `${hours}h${minutes}m`;
 }
 
 function getComment(allMinutes: number, workMinutes: number) {
@@ -40,6 +40,7 @@ function getComment(allMinutes: number, workMinutes: number) {
     return "今日はかなり詰まっているので優先順位を見直しましょう";
 }
 
+// 各タスク時間を再配分(最小5分, 合計一致するように調整)
 function getAdjustedTaskMinutes(tasks: Task[], workMinutes: number) {
     const allMinutes = tasks.reduce((sum, task) => sum + task.taskTimes, 0);
 
