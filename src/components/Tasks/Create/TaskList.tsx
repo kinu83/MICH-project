@@ -5,7 +5,7 @@ import { Plus } from "../../shared/icons/Plus";
 import { XMark } from "../../shared/icons/XMark";
 import styles from "./TaskList.module.css";
 import { useState } from "react";
-
+import { useNavigate } from "@tanstack/react-router";
 // mock data
 const EXAMPLE_TASKS = [
   {
@@ -42,9 +42,13 @@ export const PageStep = {
 
 export const TaskList = () => {
   const [currentPage, setCurrentPage] = useState<number>(PageStep.AllTasks);
+  const navigate = useNavigate();
 
   function handleClickNextButton() {
-    if (currentPage === PageStep.TotalTaskTime) return;
+    if (currentPage === PageStep.TotalTaskTime) {
+      navigate({ to: "/tasks/determine" });
+      return;
+    }
     setCurrentPage((prev) => prev + 1);
   }
 
