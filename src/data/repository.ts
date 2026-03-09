@@ -1,12 +1,14 @@
 import { mock } from "./mock";
 import type { AppStorage, Task } from "./types";
 
+const STORAGE_KEY = "app-storage";
+
 export const initStorage = (): AppStorage => {
-  const raw = localStorage.getItem("app-storage");
+  const raw = localStorage.getItem(STORAGE_KEY);
   if (!raw) {
-    localStorage.setItem("app-storage", JSON.stringify(mock));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(mock));
   }
-  return JSON.parse(localStorage.getItem("app-storage")!);
+  return JSON.parse(localStorage.getItem(STORAGE_KEY)!);
 };
 
 export const repository = {
@@ -14,7 +16,7 @@ export const repository = {
     // TODO
   },
   listTasks: (key: string): Task[] => {
-    const raw = localStorage.getItem("app-storage");
+    const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
       return [];
     }
