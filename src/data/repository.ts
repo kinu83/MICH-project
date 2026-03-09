@@ -3,33 +3,42 @@ import type { AppStorage, Task } from "./types";
 
 const STORAGE_KEY = "app-storage";
 
-export const initStorage = (): AppStorage => {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(mock));
-  }
-  return JSON.parse(localStorage.getItem(STORAGE_KEY)!);
-};
+export class Repository {
+  storage: Storage;
 
-export const repository = {
-  getTask: (key: string, id: number) => {
+  constructor() {
+    this.storage = localStorage;
+  }
+
+  public initStorage(): void {
+    const raw = this.storage.getItem(STORAGE_KEY);
+    if (!raw) {
+      this.storage.setItem(STORAGE_KEY, JSON.stringify(mock));
+    }
+  }
+
+  public getTask(key: string, id: number) {
     // TODO
-  },
-  listTasks: (key: string): Task[] => {
-    const raw = localStorage.getItem(STORAGE_KEY);
+  }
+
+  public listTasks(key: string): Task[] {
+    const raw = this.storage.getItem(STORAGE_KEY);
     if (!raw) {
       return [];
     }
-    const data = JSON.parse(raw);
+    const data = JSON.parse(raw) as AppStorage;
     return data[key]?.tasks || [];
-  },
-  addTask: (key: string, task: Task): void => {
+  }
+
+  public addTask(key: string, task: Task): void {
     // TODO
-  },
-  updateTask: (key: string, task: Task): void => {
+  }
+
+  public updateTask(key: string, task: Task): void {
     // TODO
-  },
-  deleteTask: (key: string, id: number): void => {
+  }
+
+  public deleteTask(key: string, id: number): void {
     // TODO
-  },
-};
+  }
+}

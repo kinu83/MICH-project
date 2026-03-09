@@ -6,7 +6,7 @@ import { XMark } from "../../shared/icons/XMark";
 import styles from "./TaskList.module.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { initStorage, repository } from "../../../data/repository";
+import { Repository } from "../../../data/repository";
 import type { Task } from "../../../data/types";
 
 const HOURS = Array.from({ length: 25 }, (_, i) => i);
@@ -25,7 +25,8 @@ export const TaskList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    initStorage();
+    const repository = new Repository();
+    repository.initStorage();
     const taskItems = repository.listTasks("test-date");
     setTaskItems(taskItems); // FIXME: this is anti-pattern
   }, []);
